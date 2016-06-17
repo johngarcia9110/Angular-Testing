@@ -2,6 +2,11 @@ angular
     .module('ngCribs', ['ui.bootstrap'])
     .controller('cribsController', function($scope, cribsFactory) {
         $scope.cribs;
+    
+        $scope.priceInfo = {
+            min: 0,
+            max: 1000000
+        }
         
         cribsFactory.getCribs().success(function(data){
            $scope.cribs = data; 
